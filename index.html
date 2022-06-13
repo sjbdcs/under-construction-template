@@ -11,14 +11,40 @@
     <link rel="stylesheet" href="./static/vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
+    
 <body>
     <div class="container vh-100">
         <div class="text-center">
             <img src="./static/img/construction.svg" class="h-50">
-            <h1>Coming Soon</h1>
+            <b>This is the development page. You are not supposed to be here.
+            Redirecting to primary page in <span id="countdown">10</span> seconds. Go <a href="//sjbdcs.org">home</a>
             <p>St John's IT Team are currently working hard building this page! If you have questions, please forward them to <a href="mailto:communications@sjbdcs.org">communications@sjbdcs.org</a></p>
             <a href="https://beta.sjbdcs.org?ref=Under_Construction" class="btn btn-primary mt-3">Test Beta</a>            
         </div>
     </div>
+    <!-- JavaScript part -->
+<script type="text/javascript">
+    
+    // Total seconds to wait
+    var seconds = 10;
+    
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Chnage your redirection link here
+            window.location = "https://sjbdcs.org/?ref=beta";
+        } else {
+            // Update remaining seconds
+            document.getElementById("countdown").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+    
+    // Run countdown function
+    countdown();
+</script>          
 </body>
 </html>
+
+<body>
